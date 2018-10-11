@@ -1,5 +1,5 @@
 {
-  "name": "romka-chev/yii2-swiper",
+  "name": "lantongxue/yii2-swiper",
   "description": "Yii2 extension for Swiper slider",
   "keywords": [
     "yii",
@@ -12,8 +12,8 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "Kulikov Roman",
-      "email": "flinnraider@yandex.ru"
+      "name": "lantongxue",
+      "email": "863448246@qq.com"
     }
   ],
   "require": {
