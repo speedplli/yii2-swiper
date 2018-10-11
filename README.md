@@ -32,7 +32,7 @@ to the *require* section of your application's ```composer.json``` file.
 /**
  * @var \yii\web\View $this
  */
-use romkaChev\yii2\swiper\Swiper;
+use lantongxue\yii2\swiper\Swiper;
 
 echo Swiper::widget( [
   'items'         => [
@@ -64,6 +64,6 @@ echo Swiper::widget( [
 
 ## Issues
 
-If some problems occurred, you can create [issue](https://github.com/romka-chev/yii2-swiper/issues).
+If some problems occurred, you can create [issue](https://github.com/lantongxue/yii2-swiper/issues).
 
 Thank you for attention.

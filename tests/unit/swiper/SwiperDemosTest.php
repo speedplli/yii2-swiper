@@ -1,5 +1,5 @@
 <?php
-namespace romkaChev\yii2\swiper\tests\unit\swiper;
+namespace lantongxue\yii2\swiper\tests\unit\swiper;
 
 
 class SwiperDemosTest extends \PHPUnit_Framework_TestCase

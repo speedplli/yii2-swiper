@@ -1,10 +1,10 @@
 <?php
-namespace romkaChev\yii2\swiper\tests\unit\swiper;
+namespace lantongxue\yii2\swiper\tests\unit\swiper;
 
 
-use romkaChev\yii2\swiper\Slide;
-use romkaChev\yii2\swiper\Swiper;
-use romkaChev\yii2\swiper\tests\unit\BaseTestCase;
+use lantongxue\yii2\swiper\Slide;
+use lantongxue\yii2\swiper\Swiper;
+use lantongxue\yii2\swiper\tests\unit\BaseTestCase;
 
 class ItemTest extends BaseTestCase
 {

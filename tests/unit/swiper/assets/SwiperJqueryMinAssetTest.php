@@ -1,9 +1,9 @@
 <?php
-namespace romkaChev\yii2\swiper\tests\unit\swiper\assets;
+namespace lantongxue\yii2\swiper\tests\unit\swiper\assets;
 
 
-use romkaChev\yii2\swiper\assets\SwiperJqueryMinAsset;
-use romkaChev\yii2\swiper\tests\unit\BaseTestCase;
+use lantongxue\yii2\swiper\assets\SwiperJqueryMinAsset;
+use lantongxue\yii2\swiper\tests\unit\BaseTestCase;
 
 class SwiperJqueryMinAssetBaseTest extends BaseTestCase
 {

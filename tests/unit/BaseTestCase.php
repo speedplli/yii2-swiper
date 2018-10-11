@@ -1,5 +1,5 @@
 <?php
-namespace romkaChev\yii2\swiper\tests\unit;
+namespace lantongxue\yii2\swiper\tests\unit;
 
 use yii\console\Application;
 

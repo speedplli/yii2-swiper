@@ -12,7 +12,7 @@ Swiper предоставляет возможность реализации л
 
 ```PHP
 <?php
-use romkaChev\yii2\swiper\Swiper;
+use lantongxue\yii2\swiper\Swiper;
 use yii\helpers\Html;
 
 Swiper::widget( [
