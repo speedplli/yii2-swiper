@@ -13,13 +13,13 @@ You can get this extension through [Composer](https://getcomposer.org/download/)
 Either run in terminal
  
 ```Shell
-$ php composer.phar require "romka-chev/yii2-swiper" "*"
+$ php composer.phar require "lantongxue/yii2-swiper" "*"
 ```
  
 or add
  
 ```JSON
-"romka-chev/yii2-swiper" : "*"
+"lantongxue/yii2-swiper" : "*"
 ```
  
 to the *require* section of your application's ```composer.json``` file.
