@@ -809,7 +809,7 @@ class Swiper extends Widget
     protected function registerClientScript()
     {
         $view = $this->getView();
-        SwiperAsset::register( $view );
+        SwiperAsset::register($view);
 
         $id            = $this->containerOptions['id'];
         $pluginOptions = Json::encode( $this->pluginOptions );
