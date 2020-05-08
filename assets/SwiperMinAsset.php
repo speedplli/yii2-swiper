@@ -1,5 +1,5 @@
 <?php
-namespace lantongxue\yii2\swiper\assets;
+namespace speedplli\yii2\swiper\assets;
 
 
 use yii\web\AssetBundle;
@@ -7,7 +7,7 @@ use yii\web\AssetBundle;
 /**
  * Class SwiperMinAsset
  *
- * @package lantongxue\yii2\swiper\assets
+ * @package speedplli\yii2\swiper\assets
  */
 class SwiperMinAsset extends AssetBundle
 {

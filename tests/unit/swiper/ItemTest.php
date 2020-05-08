@@ -1,10 +1,10 @@
 <?php
-namespace lantongxue\yii2\swiper\tests\unit\swiper;
+namespace speedplli\yii2\swiper\tests\unit\swiper;
 
 
-use lantongxue\yii2\swiper\Slide;
-use lantongxue\yii2\swiper\Swiper;
-use lantongxue\yii2\swiper\tests\unit\BaseTestCase;
+use speedplli\yii2\swiper\Slide;
+use speedplli\yii2\swiper\Swiper;
+use speedplli\yii2\swiper\tests\unit\BaseTestCase;
 
 class ItemTest extends BaseTestCase
 {

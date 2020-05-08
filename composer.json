@@ -1,5 +1,5 @@
 {
-  "name": "lantongxue/yii2-swiper",
+  "name": "speedplli/yii2-swiper",
   "description": "Yii2 extension for Swiper slider",
   "keywords": [
     "yii",
@@ -27,7 +27,7 @@
   },
   "autoload": {
     "psr-4": {
-      "lantongxue\\yii2\\swiper\\": ""
+      "speedplli\\yii2\\swiper\\": ""
     }
   },
   "extra": {

@@ -1,5 +1,5 @@
 <?php
-namespace lantongxue\yii2\swiper\helpers;
+namespace speedplli\yii2\swiper\helpers;
 
 
 use yii\helpers\ArrayHelper;
@@ -7,7 +7,7 @@ use yii\helpers\ArrayHelper;
 /**
  * Class SwiperCssHelper
  *
- * @package lantongxue\yii2\swiper\helpers
+ * @package speedplli\yii2\swiper\helpers
  */
 class SwiperCssHelper
 {

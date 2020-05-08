@@ -1,8 +1,8 @@
 <?php
-namespace lantongxue\yii2\swiper;
+namespace speedplli\yii2\swiper;
 
-use lantongxue\yii2\swiper\assets\SwiperAsset;
-use lantongxue\yii2\swiper\helpers\SwiperCssHelper;
+use speedplli\yii2\swiper\assets\SwiperAsset;
+use speedplli\yii2\swiper\helpers\SwiperCssHelper;
 use yii\base\Widget;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -15,7 +15,7 @@ use yii\web\JsExpression;
  *
  * @link    http://www.idangero.us/swiper/
  *
- * @package lantongxue\yii2\swiper
+ * @package speedplli\yii2\swiper
  */
 class Swiper extends Widget
 {
@@ -23,24 +23,24 @@ class Swiper extends Widget
     /**
      * @var string[]|mixed[]|Slide[] Contains information about slides
      *                               If you want to add some items in runtime,
-     *                               you should use [[\lantongxue\yii2\swiper\Swiper::addItem]]
+     *                               you should use [[\speedplli\yii2\swiper\Swiper::addItem]]
      *                               instead of direct items pushing.
      *
-     * @see \lantongxue\yii2\swiper\Slide
-     * @see \lantongxue\yii2\swiper\Swiper::$itemOptions
-     * @see \lantongxue\yii2\swiper\Swiper::addItem
-     * @see \lantongxue\yii2\swiper\Swiper::renderItem
+     * @see \speedplli\yii2\swiper\Slide
+     * @see \speedplli\yii2\swiper\Swiper::$itemOptions
+     * @see \speedplli\yii2\swiper\Swiper::addItem
+     * @see \speedplli\yii2\swiper\Swiper::renderItem
      */
     public $items = [ ];
 
     /**
-     * @var mixed[] options, which first will be merged with [[\lantongxue\yii2\swiper\Slide::$options]]
+     * @var mixed[] options, which first will be merged with [[\speedplli\yii2\swiper\Slide::$options]]
      *              for each slide, and then applied in [[\yii\helpers\Html::tag]] for rendering.
      *
-     * @see \lantongxue\yii2\swiper\Swiper::normalizeOptions
-     * @see \lantongxue\yii2\swiper\Swiper::renderItem
+     * @see \speedplli\yii2\swiper\Swiper::normalizeOptions
+     * @see \speedplli\yii2\swiper\Swiper::renderItem
      *
-     * @see \lantongxue\yii2\swiper\Slide::$options
+     * @see \speedplli\yii2\swiper\Slide::$options
      */
     public $itemOptions = [ ];
 
@@ -49,14 +49,14 @@ class Swiper extends Widget
      *              If you pass the [[id]] property, it will replace auto-generated
      *              value with custom.
      *
-     * @see \lantongxue\yii2\swiper\Swiper::run
+     * @see \speedplli\yii2\swiper\Swiper::run
      */
     public $containerOptions = [ ];
 
     /**
      * @var mixed[] Options which will be applied in [[\yii\helpers\Html::tag]].
      *
-     * @see \lantongxue\yii2\swiper\Swiper::renderWrapper
+     * @see \speedplli\yii2\swiper\Swiper::renderWrapper
      */
     public $wrapperOptions = [ ];
 
@@ -65,7 +65,7 @@ class Swiper extends Widget
      *              which will be converted to JSON and
      *              applied in Swiper plugin construction
      *
-     * @see \lantongxue\yii2\swiper\Swiper::registerClientScript
+     * @see \speedplli\yii2\swiper\Swiper::registerClientScript
      */
     public $pluginOptions = [ ];
 
@@ -77,7 +77,7 @@ class Swiper extends Widget
      *               you should declare them here
      *
      *               ~~~
-     *               \lantongxue\yii2\swiper\Swiper::widget([
+     *               \speedplli\yii2\swiper\Swiper::widget([
      *                  'items'      => ['slide01', 'slide02'],
      *                  'behaviours' => [
      *                      'pagination',
@@ -88,19 +88,19 @@ class Swiper extends Widget
      *               ~~~
      *
      *               Also you can use named constants such as:
-     *               - [[\lantongxue\yii2\swiper\Swiper::BEHAVIOUR_PAGINATION]]
-     *               - [[\lantongxue\yii2\swiper\Swiper::BEHAVIOUR_SCROLLBAR]]
-     *               - [[\lantongxue\yii2\swiper\Swiper::BEHAVIOUR_NEXT_BUTTON]]
-     *               - [[\lantongxue\yii2\swiper\Swiper::BEHAVIOUR_PREV_BUTTON]]
-     *               - [[\lantongxue\yii2\swiper\Swiper::BEHAVIOUR_RTL]]
-     *               - [[\lantongxue\yii2\swiper\Swiper::BEHAVIOUR_PARALLAX]]
+     *               - [[\speedplli\yii2\swiper\Swiper::BEHAVIOUR_PAGINATION]]
+     *               - [[\speedplli\yii2\swiper\Swiper::BEHAVIOUR_SCROLLBAR]]
+     *               - [[\speedplli\yii2\swiper\Swiper::BEHAVIOUR_NEXT_BUTTON]]
+     *               - [[\speedplli\yii2\swiper\Swiper::BEHAVIOUR_PREV_BUTTON]]
+     *               - [[\speedplli\yii2\swiper\Swiper::BEHAVIOUR_RTL]]
+     *               - [[\speedplli\yii2\swiper\Swiper::BEHAVIOUR_PARALLAX]]
      *
-     * @see \lantongxue\yii2\swiper\Swiper::BEHAVIOUR_PAGINATION
-     * @see \lantongxue\yii2\swiper\Swiper::BEHAVIOUR_SCROLLBAR
-     * @see \lantongxue\yii2\swiper\Swiper::BEHAVIOUR_NEXT_BUTTON
-     * @see \lantongxue\yii2\swiper\Swiper::BEHAVIOUR_PREV_BUTTON
-     * @see \lantongxue\yii2\swiper\Swiper::BEHAVIOUR_RTL
-     * @see \lantongxue\yii2\swiper\Swiper::BEHAVIOUR_PARALLAX
+     * @see \speedplli\yii2\swiper\Swiper::BEHAVIOUR_PAGINATION
+     * @see \speedplli\yii2\swiper\Swiper::BEHAVIOUR_SCROLLBAR
+     * @see \speedplli\yii2\swiper\Swiper::BEHAVIOUR_NEXT_BUTTON
+     * @see \speedplli\yii2\swiper\Swiper::BEHAVIOUR_PREV_BUTTON
+     * @see \speedplli\yii2\swiper\Swiper::BEHAVIOUR_RTL
+     * @see \speedplli\yii2\swiper\Swiper::BEHAVIOUR_PARALLAX
      */
     public $behaviours = [ ];
 
@@ -118,38 +118,38 @@ class Swiper extends Widget
 
 
     /**
-     * Named alias for [[\lantongxue\yii2\swiper\Swiper::$behaviours]] parallax item
+     * Named alias for [[\speedplli\yii2\swiper\Swiper::$behaviours]] parallax item
      *
-     * @see \lantongxue\yii2\swiper\Swiper::PARALLAX_BACKGROUND
-     * @see \lantongxue\yii2\swiper\Swiper::PARALLAX_TRANSITION
-     * @see \lantongxue\yii2\swiper\Swiper::PARALLAX_TRANSITION_X
-     * @see \lantongxue\yii2\swiper\Swiper::PARALLAX_TRANSITION_Y
-     * @see \lantongxue\yii2\swiper\Swiper::PARALLAX_DURATION
+     * @see \speedplli\yii2\swiper\Swiper::PARALLAX_BACKGROUND
+     * @see \speedplli\yii2\swiper\Swiper::PARALLAX_TRANSITION
+     * @see \speedplli\yii2\swiper\Swiper::PARALLAX_TRANSITION_X
+     * @see \speedplli\yii2\swiper\Swiper::PARALLAX_TRANSITION_Y
+     * @see \speedplli\yii2\swiper\Swiper::PARALLAX_DURATION
      *
-     * @see \lantongxue\yii2\swiper\Swiper::$behaviours
-     * @see \lantongxue\yii2\swiper\Swiper::$parallaxOptions
+     * @see \speedplli\yii2\swiper\Swiper::$behaviours
+     * @see \speedplli\yii2\swiper\Swiper::$parallaxOptions
      *
-     * @see \lantongxue\yii2\swiper\Swiper::renderBehaviourParallax
+     * @see \speedplli\yii2\swiper\Swiper::renderBehaviourParallax
      */
     const BEHAVIOUR_PARALLAX = 'parallax';
     /**
-     * @see \lantongxue\yii2\swiper\Swiper::renderBehaviourParallax
+     * @see \speedplli\yii2\swiper\Swiper::renderBehaviourParallax
      */
     const PARALLAX_BACKGROUND = 'background';
     /**
-     * @see \lantongxue\yii2\swiper\Swiper::renderBehaviourParallax
+     * @see \speedplli\yii2\swiper\Swiper::renderBehaviourParallax
      */
     const PARALLAX_TRANSITION = 'transition';
     /**
-     * @see \lantongxue\yii2\swiper\Swiper::renderBehaviourParallax
+     * @see \speedplli\yii2\swiper\Swiper::renderBehaviourParallax
      */
     const PARALLAX_TRANSITION_X = 'transitionX';
     /**
-     * @see \lantongxue\yii2\swiper\Swiper::renderBehaviourParallax
+     * @see \speedplli\yii2\swiper\Swiper::renderBehaviourParallax
      */
     const PARALLAX_TRANSITION_Y = 'transitionY';
     /**
-     * @see \lantongxue\yii2\swiper\Swiper::renderBehaviourParallax
+     * @see \speedplli\yii2\swiper\Swiper::renderBehaviourParallax
      */
     const PARALLAX_DURATION = 'duration';
     /**
@@ -158,7 +158,7 @@ class Swiper extends Widget
      *
      *               For example:
      *               ~~~
-     *               \lantongxue\yii2\swiper\Swiper::widget([
+     *               \speedplli\yii2\swiper\Swiper::widget([
      *                  'items'           => ['slide01', 'slide02'],
      *                  'parallaxOptions' => [
      *                      'background'  => 'http://lorempixel.com/1920/1080/nature/1/',
@@ -170,24 +170,24 @@ class Swiper extends Widget
      *
      * @link http://www.idangero.us/swiper/api/ - Parallax section at the bottom
      *
-     * @see  \lantongxue\yii2\swiper\Swiper::PARALLAX_BACKGROUND
-     * @see  \lantongxue\yii2\swiper\Swiper::PARALLAX_TRANSITION
-     * @see  \lantongxue\yii2\swiper\Swiper::PARALLAX_TRANSITION_X
-     * @see  \lantongxue\yii2\swiper\Swiper::PARALLAX_TRANSITION_Y
-     * @see  \lantongxue\yii2\swiper\Swiper::PARALLAX_DURATION
+     * @see  \speedplli\yii2\swiper\Swiper::PARALLAX_BACKGROUND
+     * @see  \speedplli\yii2\swiper\Swiper::PARALLAX_TRANSITION
+     * @see  \speedplli\yii2\swiper\Swiper::PARALLAX_TRANSITION_X
+     * @see  \speedplli\yii2\swiper\Swiper::PARALLAX_TRANSITION_Y
+     * @see  \speedplli\yii2\swiper\Swiper::PARALLAX_DURATION
      *
-     * @see  \lantongxue\yii2\swiper\Swiper::renderBehaviourParallax
+     * @see  \speedplli\yii2\swiper\Swiper::renderBehaviourParallax
      */
     public $parallaxOptions = [ ];
 
 
     /**
-     * Named alias for [[\lantongxue\yii2\swiper\Swiper::$behaviours]] pagination item
+     * Named alias for [[\speedplli\yii2\swiper\Swiper::$behaviours]] pagination item
      *
-     * @see \lantongxue\yii2\swiper\Swiper::$behaviours
-     * @see \lantongxue\yii2\swiper\Swiper::$paginationOptions
+     * @see \speedplli\yii2\swiper\Swiper::$behaviours
+     * @see \speedplli\yii2\swiper\Swiper::$paginationOptions
      *
-     * @see \lantongxue\yii2\swiper\Swiper::renderBehaviourPagination
+     * @see \speedplli\yii2\swiper\Swiper::renderBehaviourPagination
      */
     const BEHAVIOUR_PAGINATION = 'pagination';
     /**
@@ -195,7 +195,7 @@ class Swiper extends Widget
      *              tag rendering in [[\yii\helpers\Html::tag]]
      *
      *              ~~~
-     *               \lantongxue\yii2\swiper\Swiper::widget([
+     *               \speedplli\yii2\swiper\Swiper::widget([
      *                  'items'             => ['slide01', 'slide02'],
      *                  'paginationOptions' => [
      *                      'class' => 'swiper-pagination-white',
@@ -207,18 +207,18 @@ class Swiper extends Widget
      *               ]);
      *              ~~~
      *
-     * @see \lantongxue\yii2\swiper\Swiper::$scrollbarOptions
+     * @see \speedplli\yii2\swiper\Swiper::$scrollbarOptions
      */
     public $paginationOptions = [ ];
 
 
     /**
-     * Named alias for [[\lantongxue\yii2\swiper\Swiper::$behaviours]] scrollbar item
+     * Named alias for [[\speedplli\yii2\swiper\Swiper::$behaviours]] scrollbar item
      *
-     * @see \lantongxue\yii2\swiper\Swiper::$behaviours
-     * @see \lantongxue\yii2\swiper\Swiper::$scrollbarOptions
+     * @see \speedplli\yii2\swiper\Swiper::$behaviours
+     * @see \speedplli\yii2\swiper\Swiper::$scrollbarOptions
      *
-     * @see \lantongxue\yii2\swiper\Swiper::renderBehaviourScrollbar
+     * @see \speedplli\yii2\swiper\Swiper::renderBehaviourScrollbar
      */
     const BEHAVIOUR_SCROLLBAR = 'scrollbar';
     /**
@@ -226,7 +226,7 @@ class Swiper extends Widget
      *              tag rendering in [[\yii\helpers\Html::tag]]
      *
      *              ~~~
-     *               \lantongxue\yii2\swiper\Swiper::widget([
+     *               \speedplli\yii2\swiper\Swiper::widget([
      *                  'items'            => ['slide01', 'slide02'],
      *                  'scrollbarOptions' => [
      *                      'class' => 'my-custom-scrollbar-class',
@@ -238,18 +238,18 @@ class Swiper extends Widget
      *               ]);
      *              ~~~
      *
-     * @see \lantongxue\yii2\swiper\Swiper::$paginationOptions
+     * @see \speedplli\yii2\swiper\Swiper::$paginationOptions
      */
     public $scrollbarOptions = [ ];
 
 
     /**
-     * Named alias for [[\lantongxue\yii2\swiper\Swiper::$behaviours]] nextButton item
+     * Named alias for [[\speedplli\yii2\swiper\Swiper::$behaviours]] nextButton item
      *
-     * @see \lantongxue\yii2\swiper\Swiper::$behaviours
-     * @see \lantongxue\yii2\swiper\Swiper::$nextButtonOptions
+     * @see \speedplli\yii2\swiper\Swiper::$behaviours
+     * @see \speedplli\yii2\swiper\Swiper::$nextButtonOptions
      *
-     * @see \lantongxue\yii2\swiper\Swiper::renderBehaviourNextButton
+     * @see \speedplli\yii2\swiper\Swiper::renderBehaviourNextButton
      */
     const BEHAVIOUR_NEXT_BUTTON = 'nextButton';
     /**
@@ -257,7 +257,7 @@ class Swiper extends Widget
      *              tag rendering in [[\yii\helpers\Html::tag]]
      *
      *              ~~~
-     *               \lantongxue\yii2\swiper\Swiper::widget([
+     *               \speedplli\yii2\swiper\Swiper::widget([
      *                  'items'             => ['slide01', 'slide02'],
      *                  'nextButtonOptions' => [
      *                      'class' => 'my-custom-next-button-class',
@@ -269,18 +269,18 @@ class Swiper extends Widget
      *               ]);
      *              ~~~
      *
-     * @see \lantongxue\yii2\swiper\Swiper::$prevButtonOptions
+     * @see \speedplli\yii2\swiper\Swiper::$prevButtonOptions
      */
     public $nextButtonOptions = [ ];
 
 
     /**
-     * Named alias for [[\lantongxue\yii2\swiper\Swiper::$behaviours]] prevButton item
+     * Named alias for [[\speedplli\yii2\swiper\Swiper::$behaviours]] prevButton item
      *
-     * @see \lantongxue\yii2\swiper\Swiper::$behaviours
-     * @see \lantongxue\yii2\swiper\Swiper::$prevButtonOptions
+     * @see \speedplli\yii2\swiper\Swiper::$behaviours
+     * @see \speedplli\yii2\swiper\Swiper::$prevButtonOptions
      *
-     * @see \lantongxue\yii2\swiper\Swiper::renderBehaviourPrevButton
+     * @see \speedplli\yii2\swiper\Swiper::renderBehaviourPrevButton
      */
     const BEHAVIOUR_PREV_BUTTON = 'prevButton';
     /**
@@ -288,7 +288,7 @@ class Swiper extends Widget
      *              tag rendering in [[\yii\helpers\Html::tag]]
      *
      *              ~~~
-     *               \lantongxue\yii2\swiper\Swiper::widget([
+     *               \speedplli\yii2\swiper\Swiper::widget([
      *                  'items'             => ['slide01', 'slide02'],
      *                  'nextButtonOptions' => [
      *                      'class' => 'my-custom-prev-button-class',
@@ -300,30 +300,30 @@ class Swiper extends Widget
      *               ]);
      *              ~~~
      *
-     * @see \lantongxue\yii2\swiper\Swiper::$nextButtonOptions
+     * @see \speedplli\yii2\swiper\Swiper::$nextButtonOptions
      */
     public $prevButtonOptions = [ ];
 
 
     /**
-     * Named alias for [[\lantongxue\yii2\swiper\Swiper::$behaviours]] rtl item
+     * Named alias for [[\speedplli\yii2\swiper\Swiper::$behaviours]] rtl item
      *
-     * @see \lantongxue\yii2\swiper\Swiper::$behaviours
+     * @see \speedplli\yii2\swiper\Swiper::$behaviours
      *
-     * @see \lantongxue\yii2\swiper\Swiper::setBehaviourRtl
+     * @see \speedplli\yii2\swiper\Swiper::setBehaviourRtl
      */
     const BEHAVIOUR_RTL = 'rtl';
 
 
     /**
-     * This function is batch-wrapper of \lantongxue\yii2\swiper\Swiper::addItem
+     * This function is batch-wrapper of \speedplli\yii2\swiper\Swiper::addItem
      *
      * @param string[]|mixed[][]|Slide[] $items batch of items
      *                                          to be added into slider
      *
-     * @see \lantongxue\yii2\swiper\Swiper::addItem
-     * @see \lantongxue\yii2\swiper\Swiper::$items
-     * @see \lantongxue\yii2\swiper\Slide
+     * @see \speedplli\yii2\swiper\Swiper::addItem
+     * @see \speedplli\yii2\swiper\Swiper::$items
+     * @see \speedplli\yii2\swiper\Slide
      *
      * @return Swiper
      */
@@ -341,14 +341,14 @@ class Swiper extends Widget
      * you should use this instead of direct items pushing to collection,
      * because it supports configuring slides from strings and arrays.
      *
-     * Also it merges [[\lantongxue\yii2\swiper\Swiper::$itemOptions]]
+     * Also it merges [[\speedplli\yii2\swiper\Swiper::$itemOptions]]
      * with concrete item options.
      *
      * @param string|mixed[]|Slide $item The content, or configuration,
-     *                                   or [[\lantongxue\yii2\swiper\Slide]] itself.
+     *                                   or [[\speedplli\yii2\swiper\Slide]] itself.
      *
-     * @see \lantongxue\yii2\swiper\Swiper::$items
-     * @see \lantongxue\yii2\swiper\Slide
+     * @see \speedplli\yii2\swiper\Swiper::$items
+     * @see \speedplli\yii2\swiper\Slide
      *
      * @return Swiper
      */
@@ -388,10 +388,10 @@ class Swiper extends Widget
      * This function check if there is wrong behaviours
      * and call normalizing of items and every options
      *
-     * @see \lantongxue\yii2\swiper\Swiper::checkBehaviours
+     * @see \speedplli\yii2\swiper\Swiper::checkBehaviours
      *
-     * @see \lantongxue\yii2\swiper\Swiper::normalizeOptions
-     * @see \lantongxue\yii2\swiper\Swiper::normalizeItems
+     * @see \speedplli\yii2\swiper\Swiper::normalizeOptions
+     * @see \speedplli\yii2\swiper\Swiper::normalizeItems
      */
     public function init()
     {
@@ -405,14 +405,14 @@ class Swiper extends Widget
      * This function sets default values to options of widget
      * such as [[id]] and [[class]]
      *
-     * @see \lantongxue\yii2\swiper\Swiper::$containerOptions
-     * @see \lantongxue\yii2\swiper\Swiper::$wrapperOptions
-     * @see \lantongxue\yii2\swiper\Swiper::$paginationOptions
-     * @see \lantongxue\yii2\swiper\Swiper::$scrollbarOptions
-     * @see \lantongxue\yii2\swiper\Swiper::$nextButtonOptions
-     * @see \lantongxue\yii2\swiper\Swiper::$prevButtonOptions
-     * @see \lantongxue\yii2\swiper\Swiper::$parallaxOptions
-     * @see \lantongxue\yii2\swiper\Swiper::$itemOptions
+     * @see \speedplli\yii2\swiper\Swiper::$containerOptions
+     * @see \speedplli\yii2\swiper\Swiper::$wrapperOptions
+     * @see \speedplli\yii2\swiper\Swiper::$paginationOptions
+     * @see \speedplli\yii2\swiper\Swiper::$scrollbarOptions
+     * @see \speedplli\yii2\swiper\Swiper::$nextButtonOptions
+     * @see \speedplli\yii2\swiper\Swiper::$prevButtonOptions
+     * @see \speedplli\yii2\swiper\Swiper::$parallaxOptions
+     * @see \speedplli\yii2\swiper\Swiper::$itemOptions
      */
     protected function normalizeOptions()
     {
@@ -481,10 +481,10 @@ class Swiper extends Widget
     }
 
     /**
-     * This function converts non-[[\lantongxue\yii2\swiper\Slide]] items
-     * to [[\lantongxue\yii2\swiper\Slide]] respectively
+     * This function converts non-[[\speedplli\yii2\swiper\Slide]] items
+     * to [[\speedplli\yii2\swiper\Slide]] respectively
      *
-     * Then it merges [[\lantongxue\yii2\swiper\Swiper::$itemOptions]] with
+     * Then it merges [[\speedplli\yii2\swiper\Swiper::$itemOptions]] with
      * concrete item options
      *
      */
@@ -496,8 +496,8 @@ class Swiper extends Widget
     }
 
     /**
-     * This function converts non-[[\lantongxue\yii2\swiper\Slide]] item
-     * to [[\lantongxue\yii2\swiper\Slide]], merging batch options,
+     * This function converts non-[[\speedplli\yii2\swiper\Slide]] item
+     * to [[\speedplli\yii2\swiper\Slide]], merging batch options,
      * automatically sets id and class and so on...
      *
      * @param string|mixed[]|Slide $item
@@ -508,7 +508,7 @@ class Swiper extends Widget
     protected function normalizeItem( $item, $index )
     {
         /**
-         * If concrete \lantongxue\yii2\swiper\Slide given
+         * If concrete \speedplli\yii2\swiper\Slide given
          * then it is meant to be fully custom-configured
          * and it will not be managed there.
          */
@@ -569,13 +569,13 @@ class Swiper extends Widget
      *
      * @link http://www.idangero.us/swiper/api/ - Parallax section at the bottom
      *
-     * @see  \lantongxue\yii2\swiper\Swiper::PARALLAX_BACKGROUND
-     * @see  \lantongxue\yii2\swiper\Swiper::PARALLAX_TRANSITION
-     * @see  \lantongxue\yii2\swiper\Swiper::PARALLAX_TRANSITION_X
-     * @see  \lantongxue\yii2\swiper\Swiper::PARALLAX_TRANSITION_Y
-     * @see  \lantongxue\yii2\swiper\Swiper::PARALLAX_DURATION
+     * @see  \speedplli\yii2\swiper\Swiper::PARALLAX_BACKGROUND
+     * @see  \speedplli\yii2\swiper\Swiper::PARALLAX_TRANSITION
+     * @see  \speedplli\yii2\swiper\Swiper::PARALLAX_TRANSITION_X
+     * @see  \speedplli\yii2\swiper\Swiper::PARALLAX_TRANSITION_Y
+     * @see  \speedplli\yii2\swiper\Swiper::PARALLAX_DURATION
      *
-     * @see  \lantongxue\yii2\swiper\Swiper::$parallaxOptions
+     * @see  \speedplli\yii2\swiper\Swiper::$parallaxOptions
      *
      * @return string
      */
@@ -605,10 +605,10 @@ class Swiper extends Widget
      *
      * Also you can find some examples in [[~/yii2-swiper/demos]] folder
      *
-     * @see \lantongxue\yii2\swiper\Swiper::BEHAVIOUR_PAGINATION
-     * @see \lantongxue\yii2\swiper\Swiper::$paginationOptions
+     * @see \speedplli\yii2\swiper\Swiper::BEHAVIOUR_PAGINATION
+     * @see \speedplli\yii2\swiper\Swiper::$paginationOptions
      *
-     * @see \lantongxue\yii2\swiper\Swiper::renderBehaviourScrollbar
+     * @see \speedplli\yii2\swiper\Swiper::renderBehaviourScrollbar
      *
      * @return string
      */
@@ -636,10 +636,10 @@ class Swiper extends Widget
      *
      * Also you can find some examples in [[~/yii2-swiper/demos]] folder
      *
-     * @see \lantongxue\yii2\swiper\Swiper::BEHAVIOUR_SCROLLBAR
-     * @see \lantongxue\yii2\swiper\Swiper::$scrollbarOptions
+     * @see \speedplli\yii2\swiper\Swiper::BEHAVIOUR_SCROLLBAR
+     * @see \speedplli\yii2\swiper\Swiper::$scrollbarOptions
      *
-     * @see \lantongxue\yii2\swiper\Swiper::renderBehaviourPagination
+     * @see \speedplli\yii2\swiper\Swiper::renderBehaviourPagination
      *
      * @return string
      */
@@ -668,10 +668,10 @@ class Swiper extends Widget
      *
      * Also you can find some examples in [[~/yii2-swiper/demos]] folder
      *
-     * @see \lantongxue\yii2\swiper\Swiper::BEHAVIOUR_NEXT_BUTTON
-     * @see \lantongxue\yii2\swiper\Swiper::$nextButtonOptions
+     * @see \speedplli\yii2\swiper\Swiper::BEHAVIOUR_NEXT_BUTTON
+     * @see \speedplli\yii2\swiper\Swiper::$nextButtonOptions
      *
-     * @see \lantongxue\yii2\swiper\Swiper::renderBehaviourPrevButton
+     * @see \speedplli\yii2\swiper\Swiper::renderBehaviourPrevButton
      *
      * @return string
      */
@@ -700,10 +700,10 @@ class Swiper extends Widget
      *
      * Also you can find some examples in [[~/yii2-swiper/demos]] folder
      *
-     * @see \lantongxue\yii2\swiper\Swiper::BEHAVIOUR_PREV_BUTTON
-     * @see \lantongxue\yii2\swiper\Swiper::$prevButtonOptions
+     * @see \speedplli\yii2\swiper\Swiper::BEHAVIOUR_PREV_BUTTON
+     * @see \speedplli\yii2\swiper\Swiper::$prevButtonOptions
      *
-     * @see \lantongxue\yii2\swiper\Swiper::renderBehaviourNextButton
+     * @see \speedplli\yii2\swiper\Swiper::renderBehaviourNextButton
      *
      * @return string
      */
@@ -725,14 +725,14 @@ class Swiper extends Widget
     }
 
     /**
-     * This function adds [[dir=rtl]] tag option to [[\lantongxue\yii2\swiper\Swiper::$containerOptions]]
+     * This function adds [[dir=rtl]] tag option to [[\speedplli\yii2\swiper\Swiper::$containerOptions]]
      *
      * More information about rtl you can find
      * in official site of plugin - http://www.idangero.us/swiper/api/
      *
      * Also you can find some examples in [[~/yii2-swiper/demos]] folder
      *
-     * @see \lantongxue\yii2\swiper\Swiper::BEHAVIOUR_RTL
+     * @see \speedplli\yii2\swiper\Swiper::BEHAVIOUR_RTL
      *
      * @return Swiper
      */
@@ -749,8 +749,8 @@ class Swiper extends Widget
      * This function renders the wrapper tag of swiper,
      * which contains slides
      *
-     * @see \lantongxue\yii2\swiper\Swiper::$wrapperOptions
-     * @see \lantongxue\yii2\swiper\Swiper::renderItems
+     * @see \speedplli\yii2\swiper\Swiper::$wrapperOptions
+     * @see \speedplli\yii2\swiper\Swiper::renderItems
      *
      * @return string
      */
@@ -766,8 +766,8 @@ class Swiper extends Widget
     }
 
     /**
-     * This function just calls [[\lantongxue\yii2\swiper\Swiper::renderItem]]
-     * for each [[\lantongxue\yii2\swiper\Swiper::$items]] and returns
+     * This function just calls [[\speedplli\yii2\swiper\Swiper::renderItem]]
+     * for each [[\speedplli\yii2\swiper\Swiper::$items]] and returns
      * formatter result
      *
      * @param Slide[] $items
@@ -787,8 +787,8 @@ class Swiper extends Widget
     /**
      * @param Slide $slide
      *
-     * @see \lantongxue\yii2\swiper\Swiper::$items
-     * @see \lantongxue\yii2\swiper\Swiper::$itemOptions
+     * @see \speedplli\yii2\swiper\Swiper::$items
+     * @see \speedplli\yii2\swiper\Swiper::$itemOptions
      *
      * @return string
      */
@@ -803,7 +803,7 @@ class Swiper extends Widget
     /**
      * Registers the initializer of Swiper plugin
      *
-     * @see \lantongxue\yii2\swiper\Swiper::$pluginOptions
+     * @see \speedplli\yii2\swiper\Swiper::$pluginOptions
      * @return Swiper
      */
     protected function registerClientScript()
@@ -958,69 +958,69 @@ JS
 
     /**
      * Named alias for [[direction]] option
-     * in [[\lantongxue\yii2\swiper\Swiper::$pluginOptions]]
+     * in [[\speedplli\yii2\swiper\Swiper::$pluginOptions]]
      *
-     * @see \lantongxue\yii2\swiper\Swiper::OPTION_DIRECTION
-     * @see \lantongxue\yii2\swiper\Swiper::$pluginOptions
+     * @see \speedplli\yii2\swiper\Swiper::OPTION_DIRECTION
+     * @see \speedplli\yii2\swiper\Swiper::$pluginOptions
      */
     const DIRECTION_HORIZONTAL = 'horizontal';
     /**
      * Named alias for [[direction]] option
-     * in [[\lantongxue\yii2\swiper\Swiper::$pluginOptions]]
+     * in [[\speedplli\yii2\swiper\Swiper::$pluginOptions]]
      *
-     * @see \lantongxue\yii2\swiper\Swiper::OPTION_DIRECTION
-     * @see \lantongxue\yii2\swiper\Swiper::$pluginOptions
+     * @see \speedplli\yii2\swiper\Swiper::OPTION_DIRECTION
+     * @see \speedplli\yii2\swiper\Swiper::$pluginOptions
      */
     const DIRECTION_VERTICAL = 'vertical';
 
     /**
      * Named alias for [[effect]] option
-     * in [[\lantongxue\yii2\swiper\Swiper::$pluginOptions]]
+     * in [[\speedplli\yii2\swiper\Swiper::$pluginOptions]]
      *
-     * @see \lantongxue\yii2\swiper\Swiper::OPTION_EFFECT
-     * @see \lantongxue\yii2\swiper\Swiper::$pluginOptions
+     * @see \speedplli\yii2\swiper\Swiper::OPTION_EFFECT
+     * @see \speedplli\yii2\swiper\Swiper::$pluginOptions
      */
     const EFFECT_FADE = 'fade';
     /**
      * Named alias for [[effect]] option
-     * in [[\lantongxue\yii2\swiper\Swiper::$pluginOptions]]
+     * in [[\speedplli\yii2\swiper\Swiper::$pluginOptions]]
      *
-     * @see \lantongxue\yii2\swiper\Swiper::OPTION_EFFECT
-     * @see \lantongxue\yii2\swiper\Swiper::$pluginOptions
+     * @see \speedplli\yii2\swiper\Swiper::OPTION_EFFECT
+     * @see \speedplli\yii2\swiper\Swiper::$pluginOptions
      */
     const EFFECT_CUBE = 'cube';
     /**
      * Named alias for [[effect]] option
-     * in [[\lantongxue\yii2\swiper\Swiper::$pluginOptions]]
+     * in [[\speedplli\yii2\swiper\Swiper::$pluginOptions]]
      *
-     * @see \lantongxue\yii2\swiper\Swiper::OPTION_EFFECT
-     * @see \lantongxue\yii2\swiper\Swiper::$pluginOptions
+     * @see \speedplli\yii2\swiper\Swiper::OPTION_EFFECT
+     * @see \speedplli\yii2\swiper\Swiper::$pluginOptions
      */
     const EFFECT_COVERFLOW = 'coverflow';
 
     /**
      * Named alias for [[slidesPerView]] option
-     * in [[\lantongxue\yii2\swiper\Swiper::$pluginOptions]]
+     * in [[\speedplli\yii2\swiper\Swiper::$pluginOptions]]
      *
-     * @see \lantongxue\yii2\swiper\Swiper::OPTION_SLIDES_PER_VIEW
-     * @see \lantongxue\yii2\swiper\Swiper::$pluginOptions
+     * @see \speedplli\yii2\swiper\Swiper::OPTION_SLIDES_PER_VIEW
+     * @see \speedplli\yii2\swiper\Swiper::$pluginOptions
      */
     const SLIDES_PER_VIEW_AUTO = 'auto';
 
     /**
      * Named alias for [[slidesPerColumnFill]] option
-     * in [[\lantongxue\yii2\swiper\Swiper::$pluginOptions]]
+     * in [[\speedplli\yii2\swiper\Swiper::$pluginOptions]]
      *
-     * @see \lantongxue\yii2\swiper\Swiper::OPTION_SLIDES_PER_COLUMN_FILL
-     * @see \lantongxue\yii2\swiper\Swiper::$pluginOptions
+     * @see \speedplli\yii2\swiper\Swiper::OPTION_SLIDES_PER_COLUMN_FILL
+     * @see \speedplli\yii2\swiper\Swiper::$pluginOptions
      */
     const SLIDES_PER_COLUMN_FILL_COLUMN = 'column';
     /**
      * Named alias for [[slidesPerColumnFill]] option
-     * in [[\lantongxue\yii2\swiper\Swiper::$pluginOptions]]
+     * in [[\speedplli\yii2\swiper\Swiper::$pluginOptions]]
      *
-     * @see \lantongxue\yii2\swiper\Swiper::OPTION_SLIDES_PER_COLUMN_FILL
-     * @see \lantongxue\yii2\swiper\Swiper::$pluginOptions
+     * @see \speedplli\yii2\swiper\Swiper::OPTION_SLIDES_PER_COLUMN_FILL
+     * @see \speedplli\yii2\swiper\Swiper::$pluginOptions
      */
     const SLIDES_PER_COLUMN_FILL_ROW = 'row';
 

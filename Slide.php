@@ -1,7 +1,7 @@
 <?php
-namespace lantongxue\yii2\swiper;
+namespace speedplli\yii2\swiper;
 
-use lantongxue\yii2\swiper\helpers\SwiperCssHelper;
+use speedplli\yii2\swiper\helpers\SwiperCssHelper;
 use yii\base\BaseObject;
 use yii\helpers\ArrayHelper;
 
@@ -10,21 +10,21 @@ use yii\helpers\ArrayHelper;
  * Do not use it directly if you don't really know what
  * you are doing.
  *
- * @package lantongxue\yii2\swiper
+ * @package speedplli\yii2\swiper
  */
 class Slide extends BaseObject
 {
 
     /**
-     * @see \lantongxue\yii2\swiper\Slide::$content
+     * @see \speedplli\yii2\swiper\Slide::$content
      */
     const CONTENT = 'content';
     /**
-     * @see \lantongxue\yii2\swiper\Slide::$background
+     * @see \speedplli\yii2\swiper\Slide::$background
      */
     const BACKGROUND = 'background';
     /**
-     * @see \lantongxue\yii2\swiper\Slide::$hash
+     * @see \speedplli\yii2\swiper\Slide::$hash
      */
     const HASH = 'hash';
 
@@ -49,18 +49,18 @@ class Slide extends BaseObject
     /**
      * @var mixed[] options, which will be applied in [[\yii\helpers\Html::tag()]]
      *
-     * @see \lantongxue\yii2\swiper\Slide::$background
-     * @see \lantongxue\yii2\swiper\Slide::$hash
+     * @see \speedplli\yii2\swiper\Slide::$background
+     * @see \speedplli\yii2\swiper\Slide::$hash
      */
     public $options = [ ];
 
     /**
-     * @param string|mixed[] $config the configuration of [[\lantongxue\yii2\swiper\Slide]]
+     * @param string|mixed[] $config the configuration of [[\speedplli\yii2\swiper\Slide]]
      *                               You can create slide just from string
      *                               For example:
      *
      *                               ~~~
-     *                                 $slide = new \lantongxue\yii2\swiper\Slide('slide content');
+     *                                 $slide = new \speedplli\yii2\swiper\Slide('slide content');
      *                               ~~~
      *
      *
@@ -69,7 +69,7 @@ class Slide extends BaseObject
      *                               For example:
      *
      *                               ~~~
-     *                                $slide = new \lantongxue\yii2\swiper\Slide([
+     *                                $slide = new \speedplli\yii2\swiper\Slide([
      *                                    'content' => [
      *                                        '<h1>Title</h1>',
      *                                        '<h3>Subtitle</h3>',
@@ -78,9 +78,9 @@ class Slide extends BaseObject
      *                                ]);
      *                               ~~~
      *
-     * @see \lantongxue\yii2\swiper\Slide::$background
-     * @see \lantongxue\yii2\swiper\Slide::$hash
-     * @see \lantongxue\yii2\swiper\Slide::$content
+     * @see \speedplli\yii2\swiper\Slide::$background
+     * @see \speedplli\yii2\swiper\Slide::$hash
+     * @see \speedplli\yii2\swiper\Slide::$content
      */
     public function __construct( $config = [ ] )
     {

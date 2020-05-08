@@ -32,7 +32,7 @@ to the *require* section of your application's ```composer.json``` file.
 /**
  * @var \yii\web\View $this
  */
-use lantongxue\yii2\swiper\Swiper;
+use speedplli\yii2\swiper\Swiper;
 
 echo Swiper::widget( [
   'items'         => [

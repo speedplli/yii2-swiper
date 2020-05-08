@@ -1,10 +1,10 @@
 <?php
-namespace lantongxue\yii2\swiper\tests\unit\swiper;
+namespace speedplli\yii2\swiper\tests\unit\swiper;
 
 
-use lantongxue\yii2\swiper\Slide;
-use lantongxue\yii2\swiper\Swiper;
-use lantongxue\yii2\swiper\tests\unit\BaseTestCase;
+use speedplli\yii2\swiper\Slide;
+use speedplli\yii2\swiper\Swiper;
+use speedplli\yii2\swiper\tests\unit\BaseTestCase;
 
 class SwiperTest extends BaseTestCase
 {
@@ -94,7 +94,7 @@ class SwiperTest extends BaseTestCase
         $swiper->items[] = 'badValue';
         $swiper->items[] = [ 'content' => 'slide 02' ];
 
-        $this->setExpectedException( 'yii\base\ErrorException', 'must be an instance of lantongxue\yii2\swiper\Slide' );
+        $this->setExpectedException( 'yii\base\ErrorException', 'must be an instance of speedplli\yii2\swiper\Slide' );
 
         $swiper->run();
     }

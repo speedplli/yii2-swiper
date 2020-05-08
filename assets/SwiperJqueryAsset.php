@@ -1,12 +1,12 @@
 <?php
-namespace lantongxue\yii2\swiper\assets;
+namespace speedplli\yii2\swiper\assets;
 
 use yii\web\AssetBundle;
 
 /**
  * Class SwiperJqueryAsset
  *
- * @package lantongxue\yii2\swiper\assets
+ * @package speedplli\yii2\swiper\assets
  */
 class SwiperJqueryAsset extends AssetBundle
 {

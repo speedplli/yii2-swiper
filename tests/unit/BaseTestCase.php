@@ -1,5 +1,5 @@
 <?php
-namespace lantongxue\yii2\swiper\tests\unit;
+namespace speedplli\yii2\swiper\tests\unit;
 
 use yii\console\Application;
 

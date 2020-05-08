@@ -1,9 +1,9 @@
 <?php
-namespace lantongxue\yii2\swiper\tests\unit\swiper\assets;
+namespace speedplli\yii2\swiper\tests\unit\swiper\assets;
 
 
-use lantongxue\yii2\swiper\assets\SwiperJqueryAsset;
-use lantongxue\yii2\swiper\tests\unit\BaseTestCase;
+use speedplli\yii2\swiper\assets\SwiperJqueryAsset;
+use speedplli\yii2\swiper\tests\unit\BaseTestCase;
 
 class SwiperJqueryAssetBaseTest extends BaseTestCase
 {
